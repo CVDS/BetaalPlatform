@@ -1,0 +1,51 @@
+2014-04-01 13:57:04,068 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2014-04-01 13:57:04,088 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2014-04-01 13:57:04,091 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subclipse does not contain lifecycle mapping metadata
+2014-04-01 13:57:09,368 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples:SaveBillCore2:0.0.1-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\pom.xml.
+2014-04-01 13:57:11,518 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillCore/src/main/java
+2014-04-01 13:57:11,518 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SaveBillCore/src/main/resources
+2014-04-01 13:57:11,519 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillCore/src/test/java
+2014-04-01 13:57:11,668 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Project import completed 2 sec
+2014-04-01 13:57:12,500 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples:SaveBillCore2:0.0.1-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\pom.xml.
+2014-04-01 13:57:12,647 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2014-04-01 13:57:12,648 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2014-04-01 13:57:13,775 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples:SaveBillCore2:0.0.1-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\pom.xml.
+2014-04-01 13:57:13,950 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:13,954 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 13:57:14,018 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:14,018 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 13:57:16,977 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:16,978 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-04-01 13:57:16,979 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:16,980 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 13:57:18,725 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:18,728 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-04-01 13:57:18,732 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:57:18,732 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 13:58:48,332 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:58:48,337 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 13:58:48,339 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:58:48,339 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 13:58:58,883 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:58:58,886 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 13:58:58,891 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:58:58,891 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 13:59:43,469 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2014-04-01 13:59:43,576 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples:SaveBillCore2:0.0.1-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\pom.xml.
+2014-04-01 13:59:43,754 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillCore/src/main/java
+2014-04-01 13:59:43,754 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SaveBillCore/src/main/resources
+2014-04-01 13:59:43,757 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillCore/src/test/java
+2014-04-01 13:59:43,930 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2014-04-01 13:59:44,233 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:59:44,234 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 13:59:44,256 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 13:59:44,257 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 14:00:36,590 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.springframework.samples:SaveBillCore2:0.0.1-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\pom.xml.
+2014-04-01 14:00:36,809 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 14:00:36,813 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 14:00:36,829 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 14:00:36,831 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 14:01:14,384 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 14:01:14,388 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2014-04-01 14:01:14,394 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-04-01 14:01:14,396 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
