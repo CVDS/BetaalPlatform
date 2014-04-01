@@ -49,3 +49,36 @@
 2014-04-01 14:01:14,388 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
 2014-04-01 14:01:14,394 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-04-01 14:01:14,396 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore\src\test\resources
+2014-04-01 14:38:29,182 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2014-04-01 14:38:29,189 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2014-04-01 14:38:29,193 [ModalContext] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subclipse does not contain lifecycle mapping metadata
+2014-04-01 14:38:32,163 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.savebill:restservice:1.0.0-BUILD-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillService\pom.xml.
+2014-04-01 14:38:33,690 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillService/src/main/java
+2014-04-01 14:38:33,691 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /SaveBillService/src/main/resources overlaps with sources folder /SaveBillService/src/main/resources
+2014-04-01 14:38:33,691 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SaveBillService/src/test/java
+2014-04-01 14:38:33,691 [Worker-1] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Resources folder /SaveBillService/src/test/resources overlaps with sources folder /SaveBillService/src/test/resources
+2014-04-01 14:38:33,922 [Worker-1] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Project import completed 2 sec
+2014-04-01 14:38:33,946 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.savebill:restservice:1.0.0-BUILD-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillService\pom.xml.
+2014-04-01 14:38:34,902 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2014-04-01 14:38:34,903 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2014-04-01 14:38:35,448 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:38:35,457 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:38:35,472 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:38:35,477 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:47:10,886 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: org.savebill:restservice:1.0.0-BUILD-SNAPSHOT @ C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillService\pom.xml.
+2014-04-01 14:47:11,313 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:47:11,320 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:47:11,332 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:47:11,336 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:48:13,825 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:48:13,836 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:48:13,838 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:48:13,842 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-04-01 14:48:25,392 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:48:25,397 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:48:25,398 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:48:25,404 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-04-01 14:49:47,273 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:49:47,279 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2014-04-01 14:49:47,281 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-04-01 14:49:47,289 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

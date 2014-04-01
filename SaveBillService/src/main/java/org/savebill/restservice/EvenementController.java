@@ -1,5 +1,7 @@
 package org.savebill.restservice;
 
-public class EvenementController {
+import be.faros.betaalplatform.service.*;
 
+public class EvenementController {
+	SaveBillService service;
 }
