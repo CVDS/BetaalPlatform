@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Apr 01 14:22:38 CEST 2014
+org.eclipse.jst.j2ee.server\:spring-mvc-ajax=C\:\\spring-tool-suite-3.4.0.RELEASE-e4.3.1-win32\\springsource\\vfabric-tc-server-developer-2.9.3.RELEASE\\base-instance\\wtpwebapps\\spring-mvc-ajax
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\C\u00E9dric\\.gradle\\caches\\artifacts-23\\filestore\\org.springframework\\spring-web\\3.2.2.RELEASE\\jar\\ebde82aa745966f34a8ae1273e363f0a2366eb33\\spring-web-3.2.2.RELEASE.jar=C\:\\spring-tool-suite-3.4.0.RELEASE-e4.3.1-win32\\springsource\\vfabric-tc-server-developer-2.9.3.RELEASE\\base-instance\\wtpwebapps\\spring-mvc-ajax\\WEB-INF\\lib\\spring-web-3.2.2.RELEASE.jar

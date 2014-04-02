@@ -2,12 +2,14 @@ package be.faros.betaalplatform.repository;
 
 import java.util.Collection;
 
-import be.faros.betaalplatform.model.PersoonEntity;
+import be.faros.betaalplatform.entities.PersoonEntity;
+import be.faros.betaalplatform.model.Persoon;
 
 public interface PersoonRepository {
 
 	public void save(PersoonEntity persoon);
 	public void delete(PersoonEntity persoon);
 	public PersoonEntity findById(Long id);
+	public PersoonEntity findByEmail(String email);
 	public Collection<PersoonEntity> findAll();
 }

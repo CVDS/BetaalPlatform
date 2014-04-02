@@ -1,0 +1,9 @@
+INDEX VERSION 1.126
+C:\Users\Cédric\Documents\GitHub\BetaalPlatform\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3305896926.index
+\SaveBillService\src\main\java
+C:\Users\Cédric\Documents\GitHub\BetaalPlatform\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3521799510.index
+\SaveBillCore\src\main\java
+C:\Users\Cédric\Documents\GitHub\BetaalPlatform\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2313169531.index
+\SaveBillCore\src\main\java
+C:\Users\Cédric\Documents\GitHub\BetaalPlatform\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1284102260.index
+\spring-mvc-ajax\src\main\java

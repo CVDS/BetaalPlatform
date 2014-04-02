@@ -29,6 +29,8 @@ public class ApplicationConfig {
 		
 	    private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
 	    private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+	    private static final String PROPERTY_NAME_JODA_TYPE = "date.type";
+	    private static final String PROPERTY_NAME_JODA_NAME = "date.name";
 	    private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
 	    
 	    

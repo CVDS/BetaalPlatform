@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396354928995_1" label="spring-mvc-ajax" name="spring-mvc-ajax">
+<item elementID="=spring-mvc-ajax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1396353358695_0" label="Window Working Set" name="Aggregate for window 1396353358694"/>
 </workingSetManager>

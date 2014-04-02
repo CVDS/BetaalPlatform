@@ -1,0 +1,5 @@
+package be.faros.betaalplatform.entities;
+
+public enum Role {
+	administrator, verantwoordelijke, deelnemer
+}

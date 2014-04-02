@@ -1,0 +1,5 @@
+package be.faros.betaalplatform.model;
+
+public class EvenementEntity extends Identiefier{
+
+}

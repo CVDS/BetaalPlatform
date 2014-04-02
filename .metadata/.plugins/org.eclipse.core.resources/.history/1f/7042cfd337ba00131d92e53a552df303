@@ -1,0 +1,14 @@
+package be.faros.betaalplatform.service;
+
+import java.util.Collection;
+
+import be.faros.betaalplatform.entities.PersoonEntity;
+import be.faros.betaalplatform.model.Persoon;
+
+
+public interface SaveBillService {
+	void savePersoon(PersoonEntity persoon);
+	void deletePersoon(PersoonEntity persoon);
+	Persoon findPersoonById(Long id);
+	Collection<PersoonEntity> findAllePersonen();
+}

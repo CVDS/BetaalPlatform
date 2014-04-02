@@ -7,11 +7,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import be.faros.betaalplatform.model.PersoonEntity;
+import be.faros.betaalplatform.entities.PersoonEntity;
 import be.faros.betaalplatform.repository.PersoonRepository;
 
 @Repository("persoonRepository")
 public class HibernatePersoonRepository implements PersoonRepository{
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -27,12 +28,17 @@ public class HibernatePersoonRepository implements PersoonRepository{
 		PersoonEntity persoon = (PersoonEntity) sessionFactory.getCurrentSession().get(PersoonEntity.class, id);
 		return persoon;
 	}
+	
+	public PersoonEntity findByEmail(String email){
+		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity where email='Kevin@gmail.com'");
+		PersoonEntity persoon = (PersoonEntity) query.list().get(0);
+		return persoon;
+	}
 
 	public Collection<PersoonEntity> findAll() {
 		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity");
 		Collection<PersoonEntity> personenLijst = query.list();
 		return personenLijst;
 	}
-
 
 }

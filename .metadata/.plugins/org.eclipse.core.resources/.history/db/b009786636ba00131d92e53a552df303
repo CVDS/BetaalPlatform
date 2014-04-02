@@ -1,0 +1,5 @@
+package be.faros.betaalplatform.entities;
+
+public enum Status {
+	BETAALD, NIET_BETAALD,TEVEELBETAALD,TEWEINIGBETAALD
+}
