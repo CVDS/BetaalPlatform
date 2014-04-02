@@ -4,18 +4,28 @@ import java.util.Date;
 
 public class Persoon {
 	
+	private Long id;
 	private String naam;
 	private String voornaam;
 	private String email;
 	private Date geboortedatum;
 	private Role role;
 
-	public Persoon(String voornaam, String naam, String mail, Role role, Date geboorteDatum) {
+	public Persoon(Long id, String voornaam, String naam, String mail, Role role, Date geboorteDatum) {
+		setId(id);
 		setVoornaam(voornaam);
 		setNaam(naam);
 		setEmail(mail);
 		setRole(role);
 		setGeboortedatum(geboortedatum);
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNaam() {

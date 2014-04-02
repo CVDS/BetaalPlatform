@@ -1,0 +1,7 @@
+package be.faros.betaalplatform.repository.hibernate;
+
+import be.faros.betaalplatform.repository.EvenementRepository;
+
+public class HibernateEvenementRepository implements EvenementRepository{
+
+}

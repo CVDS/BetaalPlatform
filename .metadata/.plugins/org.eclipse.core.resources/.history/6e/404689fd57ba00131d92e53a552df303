@@ -1,0 +1,6 @@
+package be.faros.betaalplatform.model;
+
+public class Rekening {
+
+	
+}

@@ -16,25 +16,30 @@ public class HibernatePersoonRepository implements PersoonRepository{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	@Override
 	public void save(PersoonEntity persoon) {
 		sessionFactory.getCurrentSession().save(persoon);	
 	}
 
+	@Override
 	public void delete(PersoonEntity persoon) {
 		sessionFactory.getCurrentSession().delete(persoon);
 	}
 	
+	@Override
 	public PersoonEntity findById(Long id){
 		PersoonEntity persoon = (PersoonEntity) sessionFactory.getCurrentSession().get(PersoonEntity.class, id);
 		return persoon;
 	}
 	
+	@Override
 	public PersoonEntity findByEmail(String email){
 		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity where email='Kevin@gmail.com'");
 		PersoonEntity persoon = (PersoonEntity) query.list().get(0);
 		return persoon;
 	}
 
+	@Override
 	public Collection<PersoonEntity> findAll() {
 		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity");
 		Collection<PersoonEntity> personenLijst = query.list();

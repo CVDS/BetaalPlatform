@@ -1,0 +1,30 @@
+package be.faros.betaalplatform.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="rekening")
+public class RekeningEntity extends Identifier{
+
+	@Column(name="rekeningnummer")
+	private String rekeningnummer;
+	
+	@Column(name="rekeningnummer")
+	private String iban;
+	
+	@Column(name="rekeningnummer")
+	private String bic;
+	
+	@OneToMany
+	@JoinColumn(name="PERSOON_ID")
+	private PersoonEntity persoon;
+	
+	@Column(name="rekeningnummer")
+	private String bank;
+	
+	
+}

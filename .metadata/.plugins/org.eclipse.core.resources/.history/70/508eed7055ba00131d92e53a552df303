@@ -1,0 +1,92 @@
+package be.faros.betaalplatform.entities;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+
+import be.faros.betaalplatform.model.Status;
+
+@Entity
+@Table(name="evenement")
+public class EvenementEntity extends Identifier{
+
+	@Column(name="NAAM")
+	private String naam;
+	
+	@Column(name="STATE")
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	
+	@Column(name="STARTDATUM")
+	private Date startDatum;
+
+	@Column(name="EINDDATUM")
+	private Date eindDatum;
+	
+	@Column(name="REKENING_ID")
+	private Long rekening_id;
+	
+	
+	public EvenementEntity(){
+		//TODO catch not NULL restrictions
+	}
+
+	public EvenementEntity(Long rekeningID, String naam, Date startDatum, Date eindDatum){
+		setRekeningID(rekeningID);
+		setNaam(naam);
+		setStartDatum(startDatum);
+		setEindDatum(eindDatum);
+		setState(Status.NB);
+	}
+	
+	
+	public Long getRekeningID() {
+		return rekening_id;
+	}
+
+	public void setRekeningID(Long rekening_id) {
+		this.rekening_id = rekening_id;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public String getNaam() {
+		return naam;
+	}
+
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setState(Status status) {
+		this.status = status;
+	}
+
+	public Date getStartDatum() {
+		return startDatum;
+	}
+
+	public void setStartDatum(Date startDatum) {
+		this.startDatum = startDatum;
+	}
+
+	public Date getEindDatum() {
+		return eindDatum;
+	}
+
+	public void setEindDatum(Date eindDatum) {
+		this.eindDatum = eindDatum;
+	}
+	
+	
+}

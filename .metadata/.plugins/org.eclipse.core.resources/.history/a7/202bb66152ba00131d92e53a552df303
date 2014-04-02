@@ -1,0 +1,52 @@
+package be.faros.betaalplatform.model;
+
+import java.util.Date;
+
+public class Evenement {
+	private String naam;
+	private Status state;
+	private Date startDatum;
+	private Date eindDatum;
+	
+	public Evenement(String naam, Status state, Date startDatum, Date eindDatum) {
+		this.naam = naam;
+		this.state = state;
+		this.startDatum = startDatum;
+		this.eindDatum = eindDatum;
+	}
+
+	public String getNaam() {
+		return naam;
+	}
+
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+
+	public Status getState() {
+		return state;
+	}
+
+	public void setState(Status state) {
+		this.state = state;
+	}
+
+	public Date getStartDatum() {
+		return startDatum;
+	}
+
+	public void setStartDatum(Date startDatum) {
+		this.startDatum = startDatum;
+	}
+
+	public Date getEindDatum() {
+		return eindDatum;
+	}
+
+	public void setEindDatum(Date eindDatum) {
+		this.eindDatum = eindDatum;
+	}
+	
+	
+	
+}

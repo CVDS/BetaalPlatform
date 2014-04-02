@@ -1,0 +1,40 @@
+package be.faros.betaalplatform.repository.hibernate;
+
+import java.util.Collection;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import be.faros.betaalplatform.entities.EvenementEntity;
+import be.faros.betaalplatform.repository.EvenementRepository;
+
+@Repository("evenementRepository")
+public class HibernateEvenementRepository implements EvenementRepository{
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public void save(EvenementEntity evenement) {
+		sessionFactory.getCurrentSession().save(evenement);		
+	}
+
+	@Override
+	public void delete(EvenementEntity evenement) {
+		sessionFactory.getCurrentSession().delete(evenement);
+	}
+
+	@Override
+	public EvenementEntity findById(Long id) {
+		sessionFactory.getCurrentSession().get(EvenementEntity.class, id);
+		return null;
+	}
+
+	@Override
+	public Collection<EvenementEntity> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
