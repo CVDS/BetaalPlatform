@@ -1,0 +1,13 @@
+package be.faros.betaalplatform.repository.hibernate;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import be.faros.betaalplatform.repository.RekeningRepository;
+
+@Repository("rekeningRepository")
+public class HibernateRekeningRepository implements RekeningRepository{
+	@Autowired
+	private SessionFactory sessionFactory;
+}

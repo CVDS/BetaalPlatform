@@ -1,0 +1,20 @@
+package be.faros.betaalplatform.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import be.faros.betaalplatform.model.Status;
+
+@Entity
+@Table(name="factuur")
+public class FactuurEntity extends Identifier{
+
+	private EvenementEntity evenement;
+	
+	private Status status;
+	
+	private double bedrag;
+	7
+	
+	
+}

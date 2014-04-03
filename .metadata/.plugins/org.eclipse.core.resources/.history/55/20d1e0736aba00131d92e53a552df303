@@ -1,0 +1,33 @@
+package be.faros.betaalplatform.entities;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import be.faros.betaalplatform.model.Status;
+
+@Entity
+@Table(name="factuur")
+public class FactuurEntity extends Identifier{
+
+	@ManyToOne
+	@JoinColumn(name="EVENEMENT_ID")
+	private EvenementEntity evenement;
+	
+	@Column(name="STATUS")
+	private Status status;
+	
+	private double bedrag;
+	
+	@ManyToOne
+	@JoinColumn(name="DEELNEMER_ID")
+	private PersoonEntity deelnemer;
+	
+	private Date datum;
+	
+	
+}

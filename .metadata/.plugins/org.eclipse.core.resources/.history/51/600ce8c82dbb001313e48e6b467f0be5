@@ -1,0 +1,85 @@
+package be.faros.betaalplatform.service;
+
+import java.util.Arrays;
+import java.util.Date;
+
+import org.dozer.DozerBeanMapper;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import be.faros.betaalplatform.entities.PersoonEntity;
+import be.faros.betaalplatform.model.Evenement;
+import be.faros.betaalplatform.model.Factuur;
+import be.faros.betaalplatform.model.Persoon;
+import be.faros.betaalplatform.model.Rekening;
+import be.faros.betaalplatform.util.ApplicationConfig;
+
+public class Test {
+	public static void main(String[] args) {
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(
+				ApplicationConfig.class);
+		SaveBillService service = (SaveBillService) ctx
+				.getBean("saveBillServiceImp");
+
+		/*
+		 * service.savePersoon(persoon);
+		 */
+		/*
+		 * service.deletePersoon(persoon);
+		 */
+
+		
+		  Persoon p = service.findPersoonById(new Long(4));
+		  System.out.println(p.getId() + ": " + p.getVoornaam() + " " + p.getNaam() + " - " + p.getEmail()) + " - " + p.getGeboortedatum());
+		 // System.out.println(p.getAlleRekeningen());
+		 /* 
+		 * Persoon p2 = service.findPersoonByEmail("keving@gmail.com");
+		 * System.out.println(p2.getVoornaam() + " " + p2.getNaam());
+		 */
+		/*
+		 * System.out.println("--------PERSONEN---------"); for(Persoon
+		 * ps:service.findAllePersonen()){ System.out.println(ps.getId() + ": "
+		 * + ps.getVoornaam() + " " + ps.getNaam()); }
+		 * 
+		 * 
+		 * //Evenement ev = new Evenement(new Long(0),"nieuw event", new Date(),
+		 * new Date()); //service.saveEvenement(ev);
+		 * 
+		 * System.out.println("\n--------EVENEMENTEN---------"); for(Evenement
+		 * es:service.findAlleEvenementen()){ System.out.println(es.getId() +
+		 * ": " + es.getNaam() + " " + es.getState()); }
+		 * 
+		 * System.out.println("\n--------REKENINGEN---------"); for(Rekening
+		 * rs:service.findAlleRekeningen()){ System.out.println(rs.getId() +
+		 * ": " + rs.getRekeningnummer() + " " + rs.getBank()); }
+		 * 
+		 * System.out.println("\n--------FACTUREN---------"); for(Factuur
+		 * fs:service.findAlleFacturen()){ System.out.println(fs.getId() + ": "
+		 * + fs.getBedrag() + " " + fs.getDatum()); }
+		 */
+
+		/*
+		DozerBeanMapper mapper = new DozerBeanMapper(
+				Arrays.asList(new String[] { "dozerBeanMapping.xml" }));
+		System.out.println("sj");
+		PersoonEntity persoonE = new PersoonEntity();
+		persoonE.setNaam("jos");
+
+
+		persoonE.setName("ben");
+		persoonE.setSno(5);
+		persoonE.setDateOfBirth("10/10/1990");
+
+
+		Persoon persoon = mapper.map(persoonE, Persoon.class);
+		System.out.println(persoon.getNaam());
+
+
+		System.out.println("name: " + destObject.getName());
+		System.out.println("eno: " + destObject.getEno());
+		System.out.println("date of birth: " + destObject.getDateOfBirth());
+		*/
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package be.faros.betaalplatform.repository;
+
+import java.util.Collection;
+
+import be.faros.betaalplatform.entities.RekeningEntity;
+
+public interface RekeningRepository {
+	public void save(RekeningEntity evenement);
+	public void delete(RekeningEntity evenement);
+	public RekeningEntity findById(Long id);
+	public Collection<RekeningEntity> findAll();
+}

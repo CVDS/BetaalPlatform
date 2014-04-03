@@ -1,0 +1,42 @@
+package be.faros.betaalplatform.repository.hibernate;
+
+import java.util.Collection;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import be.faros.betaalplatform.entities.FactuurEntity;
+import be.faros.betaalplatform.entities.PersoonEntity;
+import be.faros.betaalplatform.repository.FactuurRepository;
+
+@Repository("factuurRepository")
+public class HibernateFactuurRepository implements FactuurRepository {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public void save(FactuurEntity factuur) {
+		sessionFactory.getCurrentSession().save(factuur);	
+	}
+
+	@Override
+	public void delete(FactuurEntity factuur) {
+		sessionFactory.getCurrentSession().delete(factuur);
+	}
+
+	@Override
+	public FactuurEntity findById(Long id) {
+		FactuurEntity factuur = (FactuurEntity) sessionFactory.getCurrentSession().get(FactuurEntity.class, id);
+		return factuur;
+	}
+
+	@Override
+	public Collection<FactuurEntity> findAll() {
+		Query query = sessionFactory.getCurrentSession().createQuery("from FactuurEntity");
+		Collection<FactuurEntity> facturenLijst = query.list();
+		return facturenLijst;
+	}
+}

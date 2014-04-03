@@ -1,6 +1,8 @@
 package be.faros.betaalplatform.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Persoon {
 	
@@ -10,7 +12,11 @@ public class Persoon {
 	private String email;
 	private Date geboortedatum;
 	private Role role;
-
+	private List<Rekening> rekeningen;
+	
+	public Persoon(){
+		
+	}
 	public Persoon(Long id, String voornaam, String naam, String mail, Role role, Date geboorteDatum) {
 		setId(id);
 		setVoornaam(voornaam);
@@ -18,6 +24,23 @@ public class Persoon {
 		setEmail(mail);
 		setRole(role);
 		setGeboortedatum(geboortedatum);
+		rekeningen = new ArrayList<Rekening>();
+	}
+	
+	public void addRekening(Rekening rekening){
+		rekeningen.add(rekening);
+	}
+	
+	public void removeRekening(Rekening rekening){
+		rekeningen.remove(rekening);
+	}
+	
+	public Rekening getRekening(int index){
+		return rekeningen.get(index);
+	}
+	
+	public List<Rekening> getAlleRekeningen(){
+		return rekeningen;
 	}
 
 	public Long getId() {

@@ -1,0 +1,14 @@
+package be.faros.betaalplatform.repository.hibernate;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import be.faros.betaalplatform.repository.FactuurRepository;
+
+@Repository("factuurRepository")
+public class HibernateFactuurRepository implements FactuurRepository {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+}

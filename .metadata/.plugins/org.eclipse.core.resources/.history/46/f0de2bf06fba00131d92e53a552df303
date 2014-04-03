@@ -1,0 +1,14 @@
+package be.faros.betaalplatform.model;
+
+import java.util.Date;
+
+import be.faros.betaalplatform.entities.EvenementEntity;
+import be.faros.betaalplatform.entities.PersoonEntity;
+
+public class Factuur {
+	private Evenement evenement;
+	private Status status;
+	private double bedrag;
+	private Persoon deelnemer;
+	private Date datum;
+}

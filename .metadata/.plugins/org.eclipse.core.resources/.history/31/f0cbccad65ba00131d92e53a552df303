@@ -1,0 +1,12 @@
+package be.faros.betaalplatform.repository;
+
+import java.util.Collection;
+
+import be.faros.betaalplatform.entities.RekeningEntity;
+
+public interface FactuurRepository {
+	public void save(FactuurEntity evenement);
+	public void delete(FactuurEntity evenement);
+	public FactuurEntity findById(Long id);
+	public Collection<FactuurEntity> findAll();
+}

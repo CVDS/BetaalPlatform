@@ -1,52 +1,72 @@
 package be.faros.betaalplatform.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 
+import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import be.faros.betaalplatform.entities.EvenementEntity;
+import be.faros.betaalplatform.entities.FactuurEntity;
 import be.faros.betaalplatform.entities.PersoonEntity;
 import be.faros.betaalplatform.entities.RekeningEntity;
 import be.faros.betaalplatform.model.Evenement;
+import be.faros.betaalplatform.model.Factuur;
 import be.faros.betaalplatform.model.Persoon;
+import be.faros.betaalplatform.model.Rekening;
 import be.faros.betaalplatform.model.Role;
 import be.faros.betaalplatform.repository.EvenementRepository;
+import be.faros.betaalplatform.repository.FactuurRepository;
 import be.faros.betaalplatform.repository.PersoonRepository;
+import be.faros.betaalplatform.repository.RekeningRepository;
 
 @Service
 public class SaveBillServiceImp implements SaveBillService {
 
 	private PersoonRepository persoonRepository;
 	private EvenementRepository evenementRepository;
+	private RekeningRepository rekeningRepository;
+	private FactuurRepository factuurRepository;
+	private DozerBeanMapper mapper;
 
 	@Autowired
-	public SaveBillServiceImp(PersoonRepository persoonRepository, EvenementRepository evenementRepository) {
+	public SaveBillServiceImp(PersoonRepository persoonRepository,
+			EvenementRepository evenementRepository,
+			RekeningRepository rekeningRepository,
+			FactuurRepository factuurRepository) {
 		this.persoonRepository = persoonRepository;
 		this.evenementRepository = evenementRepository;
+		this.rekeningRepository = rekeningRepository;
+		this.factuurRepository = factuurRepository;
+		this.mapper = new DozerBeanMapper(
+				Arrays.asList(new String[] { "dozerBeanMapping.xml" }));
 	}
 
 	@Override
 	@Transactional
 	public void savePersoon(Persoon p) {
-		PersoonEntity pe = new PersoonEntity(p.getNaam(), p.getVoornaam(), p.getEmail(), p.getGeboortedatum(), p.getRole());
+		PersoonEntity pe = new PersoonEntity(p.getNaam(), p.getVoornaam(),
+				p.getEmail(), p.getGeboortedatum(), p.getRole());
 		persoonRepository.save(pe);
 	}
-	
+
 	@Override
 	@Transactional
-	public void registreerPersoon(String naam, String voornaam, String email, Role role, Date geboortedatum, String wachtwoord){
-		PersoonEntity pe = new PersoonEntity(naam, voornaam, email, geboortedatum, role, wachtwoord);
+	public void registreerPersoon(String naam, String voornaam, String email,
+			Role role, Date geboortedatum, String wachtwoord) {
+		PersoonEntity pe = new PersoonEntity(naam, voornaam, email,
+				geboortedatum, role, wachtwoord);
 		persoonRepository.save(pe);
 	}
 
 	@Override
 	@Transactional
 	public void deletePersoon(Persoon persoon) {
-		//TODO Uniek email moet afgedwongen worden
+		// TODO Uniek email moet afgedwongen worden
 		PersoonEntity pe = persoonRepository.findByEmail(persoon.getEmail());
 		persoonRepository.delete(pe);
 	}
@@ -54,16 +74,16 @@ public class SaveBillServiceImp implements SaveBillService {
 	@Override
 	@Transactional
 	public Persoon findPersoonById(Long id) {
-		PersoonEntity pe = persoonRepository.findById(id);
-		Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+		PersoonEntity persoonE = persoonRepository.findById(id);
+		Persoon persoon = mapper.map(persoonE, Persoon.class);
 		return persoon;
 	}
-	
+
 	@Override
 	@Transactional
-	public Persoon findPersoonByEmail(String email){
-		PersoonEntity pe = persoonRepository.findByEmail(email);
-		Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+	public Persoon findPersoonByEmail(String email) {
+		PersoonEntity persoonE = persoonRepository.findByEmail(email);
+		Persoon persoon = mapper.map(persoonE, Persoon.class);
 		return persoon;
 	}
 
@@ -72,8 +92,8 @@ public class SaveBillServiceImp implements SaveBillService {
 	public Collection<Persoon> findAllePersonen() {
 		Collection<PersoonEntity> personenE = persoonRepository.findAll();
 		Collection<Persoon> personen = new ArrayList<Persoon>();
-		for(PersoonEntity pe:personenE){
-			Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+		for (PersoonEntity persoonE : personenE) {
+			Persoon persoon = mapper.map(persoonE, Persoon.class);
 			personen.add(persoon);
 		}
 		return personen;
@@ -82,9 +102,8 @@ public class SaveBillServiceImp implements SaveBillService {
 	@Override
 	@Transactional
 	public void saveEvenement(Evenement evenement) {
-		RekeningEntity rekeningEntity;
-		//EvenementEntity eventEntity = new EvenementEntity(evenement.getRekening(), evenement.getNaam(), evenement.getStartDatum(), evenement.getEindDatum());
-		evenementRepository.save(null);
+		EvenementEntity evenementE = mapper.map(evenement, EvenementEntity.class);
+		evenementRepository.save(evenementE);
 	}
 
 	@Override
@@ -98,24 +117,90 @@ public class SaveBillServiceImp implements SaveBillService {
 	@Transactional
 	public Evenement findEvenementById(Long id) {
 		EvenementEntity evenementEntity = evenementRepository.findById(id);
-		//RekeningEntity rekeningEntity = evenementEntity.getRekening();
-	//	Rekening rekening = new Rekening();
-		Evenement evenement = new Evenement( evenementEntity.getNaam(), evenementEntity.getStatus(),evenementEntity.getStartDatum(), evenementEntity.getEindDatum());
+		Evenement evenement = mapper.map(evenementEntity, Evenement.class);
 		return evenement;
 	}
 
 	@Override
 	@Transactional
 	public Collection<Evenement> findAlleEvenementen() {
-		Collection<EvenementEntity> evenementenE = evenementRepository.findAll();
+		Collection<EvenementEntity> evenementenE = evenementRepository
+				.findAll();
 		Collection<Evenement> evenementen = new ArrayList<Evenement>();
-		for(EvenementEntity evenementEntity:evenementenE){
-			//RekeningEntity rekeningEntity = evenementEntity.getRekening();
-			//Rekening rekening = new Rekening();
-			Evenement evenement = new Evenement(evenementEntity.getNaam(), evenementEntity.getStatus(),evenementEntity.getStartDatum(), evenementEntity.getEindDatum());
+		for (EvenementEntity evenementEntity : evenementenE) {
+			Evenement evenement = mapper.map(evenementEntity, Evenement.class);
 			evenementen.add(evenement);
 		}
 		return evenementen;
+	}
+
+	@Override
+	@Transactional
+	public void saveRekening(Rekening rekening) {
+		RekeningEntity rekeningEntity = rekeningRepository.findById(rekening
+				.getId());
+		rekeningRepository.save(rekeningEntity);
+	}
+
+	@Override
+	@Transactional
+	public void deleteRekeningById(Long id) {
+		RekeningEntity rekeningEntity = rekeningRepository.findById(id);
+		rekeningRepository.delete(rekeningEntity);
+	}
+
+	@Override
+	@Transactional
+	public Rekening findRekeningById(Long id) {
+		RekeningEntity rekeningE = rekeningRepository.findById(id);
+		Rekening rekening = mapper.map(rekeningE, Rekening.class);
+		return rekening;
+	}
+
+	@Override
+	@Transactional
+	public Collection<Rekening> findAlleRekeningen() {
+		Collection<RekeningEntity> rekeningenE = rekeningRepository.findAll();
+		Collection<Rekening> rekeningen = new ArrayList<Rekening>();
+		for (RekeningEntity rekeningEntity : rekeningenE) {
+			Rekening rekening = mapper.map(rekeningEntity, Rekening.class);
+			rekeningen.add(rekening);
+		}
+		return rekeningen;
+	}
+
+	@Override
+	@Transactional
+	public void saveFactuur(Factuur factuur) {
+		FactuurEntity factuurE = mapper.map(factuur, FactuurEntity.class);
+		factuurRepository.save(factuurE);
+	}
+
+	@Override
+	@Transactional
+	public void deleteFactuurById(Long id) {
+		FactuurEntity factuurEntity = factuurRepository.findById(id);
+		factuurRepository.delete(factuurEntity);
+	}
+
+	@Override
+	@Transactional
+	public Factuur findFactuurById(Long id) {
+		FactuurEntity factuurE = factuurRepository.findById(id);
+		Factuur factuur = mapper.map(factuurE, Factuur.class);
+		return factuur;
+	}
+
+	@Override
+	@Transactional
+	public Collection<Factuur> findAlleFacturen() {
+		Collection<FactuurEntity> facturenE = factuurRepository.findAll();
+		Collection<Factuur> facturen = new ArrayList<>();
+		for (FactuurEntity factuurE : facturenE) {
+			Factuur factuur = mapper.map(factuurE, Factuur.class);
+			facturen.add(factuur);
+		}
+		return facturen;
 	}
 
 }

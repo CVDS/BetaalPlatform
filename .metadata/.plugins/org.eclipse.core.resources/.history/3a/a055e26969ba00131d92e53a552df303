@@ -1,0 +1,11 @@
+package be.faros.betaalplatform.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="factuur")
+public class FactuurEntity extends Identifier{
+
+	
+}

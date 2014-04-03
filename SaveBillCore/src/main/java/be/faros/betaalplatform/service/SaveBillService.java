@@ -4,7 +4,9 @@ import java.util.Collection;
 import java.util.Date;
 
 import be.faros.betaalplatform.model.Evenement;
+import be.faros.betaalplatform.model.Factuur;
 import be.faros.betaalplatform.model.Persoon;
+import be.faros.betaalplatform.model.Rekening;
 import be.faros.betaalplatform.model.Role;
 
 
@@ -22,5 +24,17 @@ public interface SaveBillService {
 	public void deleteEvenementById(Long id);
 	public Evenement findEvenementById(Long id);
 	public Collection<Evenement> findAlleEvenementen();
+	
+	//RekeningService
+	public void saveRekening(Rekening rekening);
+	public void deleteRekeningById(Long id);
+	public Rekening findRekeningById(Long id);
+	public Collection<Rekening> findAlleRekeningen();
+	
+	//FactuurService
+	public void saveFactuur(Factuur factuur);
+	public void deleteFactuurById(Long id);
+	public Factuur findFactuurById(Long id);
+	public Collection<Factuur> findAlleFacturen();
 	
 }

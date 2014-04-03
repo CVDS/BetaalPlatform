@@ -2,22 +2,33 @@ package be.faros.betaalplatform.model;
 
 import java.util.Date;
 
+import org.dozer.Mapping;
+
 public class Evenement {
 	private Long id;
-//	private Rekening rekening;
+	private Rekening rekening;
 	private String naam;
 	private Status status;
 	private Date startDatum;
 	private Date eindDatum;
-	
-	public Evenement( String naam, Date startDatum, Date eindDatum) {
+
+	public Evenement() {
+
+	}
+
+	public Evenement(Long id, Rekening rekening, String naam, Date startDatum,
+			Date eindDatum) {
+		setId(id);
+		setRekening(rekening);
 		setNaam(naam);
 		setStartDatum(startDatum);
 		setEindDatum(eindDatum);
 	}
-	
-	public Evenement( String naam, Status status, Date startDatum, Date eindDatum) {
-		
+
+	public Evenement(Long id, Rekening rekening, String naam, Status status,
+			Date startDatum, Date eindDatum) {
+		setId(id);
+		setRekening(rekening);
 		setNaam(naam);
 		setState(status);
 		setStartDatum(startDatum);
@@ -31,7 +42,7 @@ public class Evenement {
 	public void setId(Long id) {
 		this.id = id;
 	}
-/*
+
 	public Rekening getRekening() {
 		return rekening;
 	}
@@ -39,7 +50,7 @@ public class Evenement {
 	public void setRekening(Rekening rekening) {
 		this.rekening = rekening;
 	}
-*/
+
 	public Status getStatus() {
 		return status;
 	}
@@ -79,7 +90,5 @@ public class Evenement {
 	public void setEindDatum(Date eindDatum) {
 		this.eindDatum = eindDatum;
 	}
-	
-	
-	
+
 }

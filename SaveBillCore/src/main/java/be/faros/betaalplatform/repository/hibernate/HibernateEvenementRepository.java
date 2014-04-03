@@ -38,5 +38,4 @@ public class HibernateEvenementRepository implements EvenementRepository{
 		Collection<EvenementEntity> evenementen = query.list();
 		return evenementen;
 	}
-
 }

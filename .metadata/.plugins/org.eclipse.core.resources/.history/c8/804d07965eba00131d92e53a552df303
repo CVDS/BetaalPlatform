@@ -1,0 +1,14 @@
+package be.faros.betaalplatform.model;
+
+
+import be.faros.betaalplatform.entities.PersoonEntity;
+
+public class Rekening {
+	
+	private String rekeningnummer;
+	private String iban;
+	private String bic;
+	private PersoonEntity persoon;
+	private String bank;
+
+}

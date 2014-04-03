@@ -1,0 +1,196 @@
+package be.faros.betaalplatform.service;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import be.faros.betaalplatform.entities.EvenementEntity;
+import be.faros.betaalplatform.entities.FactuurEntity;
+import be.faros.betaalplatform.entities.PersoonEntity;
+import be.faros.betaalplatform.entities.RekeningEntity;
+import be.faros.betaalplatform.model.Evenement;
+import be.faros.betaalplatform.model.Factuur;
+import be.faros.betaalplatform.model.Persoon;
+import be.faros.betaalplatform.model.Rekening;
+import be.faros.betaalplatform.model.Role;
+import be.faros.betaalplatform.repository.EvenementRepository;
+import be.faros.betaalplatform.repository.FactuurRepository;
+import be.faros.betaalplatform.repository.PersoonRepository;
+import be.faros.betaalplatform.repository.RekeningRepository;
+
+@Service
+public class SaveBillServiceImp implements SaveBillService {
+
+	private PersoonRepository persoonRepository;
+	private EvenementRepository evenementRepository;
+	private RekeningRepository rekeningRepository;
+	private FactuurRepository factuurRepository;
+
+	@Autowired
+	public SaveBillServiceImp(PersoonRepository persoonRepository, EvenementRepository evenementRepository, RekeningRepository rekeningRepository, FactuurRepository factuurRepository) {
+		this.persoonRepository = persoonRepository;
+		this.evenementRepository = evenementRepository;
+		this.rekeningRepository = rekeningRepository;
+		this.factuurRepository = factuurRepository;
+	}
+
+	@Override
+	@Transactional
+	public void savePersoon(Persoon p) {
+		PersoonEntity pe = new PersoonEntity(p.getNaam(), p.getVoornaam(), p.getEmail(), p.getGeboortedatum(), p.getRole());
+		persoonRepository.save(pe);
+	}
+	
+	@Override
+	@Transactional
+	public void registreerPersoon(String naam, String voornaam, String email, Role role, Date geboortedatum, String wachtwoord){
+		PersoonEntity pe = new PersoonEntity(naam, voornaam, email, geboortedatum, role, wachtwoord);
+		persoonRepository.save(pe);
+	}
+
+	@Override
+	@Transactional
+	public void deletePersoon(Persoon persoon) {
+		//TODO Uniek email moet afgedwongen worden
+		PersoonEntity pe = persoonRepository.findByEmail(persoon.getEmail());
+		persoonRepository.delete(pe);
+	}
+
+	@Override
+	@Transactional
+	public Persoon findPersoonById(Long id) {
+		PersoonEntity pe = persoonRepository.findById(id);
+		Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+		return persoon;
+	}
+	
+	@Override
+	@Transactional
+	public Persoon findPersoonByEmail(String email){
+		PersoonEntity pe = persoonRepository.findByEmail(email);
+		Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+		return persoon;
+	}
+
+	@Override
+	@Transactional
+	public Collection<Persoon> findAllePersonen() {
+		Collection<PersoonEntity> personenE = persoonRepository.findAll();
+		Collection<Persoon> personen = new ArrayList<Persoon>();
+		for(PersoonEntity pe:personenE){
+			Persoon persoon = new Persoon(pe.getId(), pe.getVoornaam(), pe.getNaam(), pe.getEmail(), pe.getRole(), pe.getGeboortedatum());
+			personen.add(persoon);
+		}
+		return personen;
+	}
+
+	@Override
+	@Transactional
+	public void saveEvenement(Evenement evenement) {
+		Rekening rekening = evenement.getRekening();
+		RekeningEntity rekeningEntity = rekeningRepository.findById(rekening.getId());
+		EvenementEntity eventEntity = new EvenementEntity(rekeningEntity, evenement.getNaam(), evenement.getStartDatum(), evenement.getEindDatum());
+		evenementRepository.save(eventEntity);
+	}
+
+	@Override
+	@Transactional
+	public void deleteEvenementById(Long id) {
+		EvenementEntity eventEntity = evenementRepository.findById(id);
+		evenementRepository.delete(eventEntity);
+	}
+
+	@Override
+	@Transactional
+	public Evenement findEvenementById(Long id) {
+		EvenementEntity evenementEntity = evenementRepository.findById(id);
+		RekeningEntity rekeningEntity = evenementEntity.getRekening();
+		Rekening rekening = new Rekening(rekeningEntity.getId(), rekeningEntity.getRekeningnummer(), rekeningEntity.getIban(), rekeningEntity.getBic(), rekeningEntity.getPersoon(), rekeningEntity.getBank());
+		Evenement evenement = new Evenement(rekening, evenementEntity.getNaam(), evenementEntity.getStatus(),evenementEntity.getStartDatum(), evenementEntity.getEindDatum());
+		return evenement;
+	}
+
+	@Override
+	@Transactional
+	public Collection<Evenement> findAlleEvenementen() {
+		Collection<EvenementEntity> evenementenE = evenementRepository.findAll();
+		Collection<Evenement> evenementen = new ArrayList<Evenement>();
+		for(EvenementEntity evenementEntity:evenementenE){
+			RekeningEntity rekeningEntity = evenementEntity.getRekening();
+			Rekening rekening = new Rekening(rekeningEntity.getId(), rekeningEntity.getRekeningnummer(), rekeningEntity.getIban(), rekeningEntity.getBic(), rekeningEntity.getPersoon(), rekeningEntity.getBank());
+			Evenement evenement = new Evenement(rekening, evenementEntity.getNaam(), evenementEntity.getStatus(),evenementEntity.getStartDatum(), evenementEntity.getEindDatum());
+			evenementen.add(evenement);
+		}
+		return evenementen;
+	}
+
+	@Override
+	public void saveRekening(Rekening rekening) {
+		RekeningEntity rekeningEntity = rekeningRepository.findById(rekening.getId());
+		rekeningRepository.save(rekeningEntity);
+	}
+
+	@Override
+	public void deleteRekeningById(Long id) {
+		RekeningEntity rekeningEntity = rekeningRepository.findById(id);
+		rekeningRepository.delete(rekeningEntity);
+	}
+
+	@Override
+	public Rekening findRekeningById(Long id) {
+		RekeningEntity re = rekeningRepository.findById(id);
+		Rekening rekening = new Rekening(re.getId(), re.getRekeningnummer(), re.getIban(), re.getBic(), re.getPersoon(), re.getBank());
+		return rekening;
+	}
+
+	@Override
+	public Collection<Rekening> findAlleRekeningen() {
+		Collection<RekeningEntity> rekeningE = rekeningRepository.findAll();
+		Collection<Rekening> rekeningen = new ArrayList<Rekening>();
+		for(RekeningEntity rekeningEntity:rekeningE){
+			Rekening rekening = new Rekening(rekeningEntity.getId(),rekeningEntity.getRekeningnummer(),rekeningEntity.getIban(),rekeningEntity.getBic(),rekeningEntity.getPersoon(), rekeningEntity.getBank());
+			rekeningen.add(rekening);
+		}
+		return rekeningen;
+	}
+
+	@Override
+	public void saveFactuur(Factuur factuur) {
+		Evenement evenement = factuur.getEvenement();
+		EvenementEntity evenementEntity = evenementRepository.findById(evenement.getId());
+		Persoon persoon = factuur.getDeelnemer();
+		PersoonEntity persoonEntity = persoonRepository.findById(persoon.getId());
+		FactuurEntity factuurEntity = new FactuurEntity(evenementEntity,factuur.getStatus(),factuur.getBedrag(), persoonEntity, factuur.getDatum());
+		factuurRepository.save(factuurEntity);
+	}
+
+	@Override
+	public void deleteFactuurById(Long id) {
+		FactuurEntity factuurEntity = factuurRepository.findById(id);
+		factuurRepository.delete(factuurEntity);
+	}
+
+	@Override
+	public Factuur findFactuurById(Long id) {
+		FactuurEntity fe = factuurRepository.findById(id);
+		EvenementEntity evenementEntity = fe.getEvenement();
+		Evenement evenement = findEvenementById(evenementEntity.getId());
+		
+		PersoonEntity persoonEntity = fe.getDeelnemer();
+		Persoon persoon = findPersoonById(persoonEntity.getId());
+		
+		FactuurEntity factuurEntity = new FactuurEntity(evenementEntity,factuur.getStatus(),factuur.getBedrag(), persoonEntity, factuur.getDatum());
+		return factuur;
+	}
+
+	@Override
+	public Collection<Factuur> findAlleFacturen() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

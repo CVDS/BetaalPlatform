@@ -3,3 +3,5 @@
 1396422856151	Move compilation unit
 1396434879644	Rename field 'state'
 1396439123868	Delete element
+1396527499317	Rename local variable 'student'
+1396527506276	Rename local variable 'persoon'

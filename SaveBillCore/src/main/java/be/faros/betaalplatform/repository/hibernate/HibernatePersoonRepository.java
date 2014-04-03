@@ -1,6 +1,7 @@
 package be.faros.betaalplatform.repository.hibernate;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -34,8 +35,14 @@ public class HibernatePersoonRepository implements PersoonRepository{
 	
 	@Override
 	public PersoonEntity findByEmail(String email){
-		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity where email='Kevin@gmail.com'");
-		PersoonEntity persoon = (PersoonEntity) query.list().get(0);
+		//TODO Mail niet hardcoded
+		Query query = sessionFactory.getCurrentSession().createQuery("from PersoonEntity where email= :email ");
+		query.setParameter("email", email);
+		List<PersoonEntity> personen = query.list();
+		if(personen.isEmpty()){
+			//throw exception: person not found
+		}
+		PersoonEntity persoon = personen.get(0);
 		return persoon;
 	}
 

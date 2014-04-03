@@ -20,6 +20,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Cédric\Documents\GitHub\dozer"/>
 			<item value="C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillService"/>
 			<item value="C:\Users\Cédric\Documents\GitHub\spring-mvc-ajax\src"/>
 			<item value="C:\Users\Cédric\Documents\GitHub\BetaalPlatform\SaveBillCore"/>

@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.dozer.Mapping;
 
 import be.faros.betaalplatform.model.Status;
 
@@ -29,24 +32,23 @@ public class EvenementEntity extends Identifier{
 	@Column(name="EINDDATUM")
 	private Date eindDatum;
 	
-	//@ManyToOne
-	//@JoinColumn(name="REKENING_ID")
-	//private RekeningEntity rekening;
+	@ManyToOne
+	@JoinColumn(name="REKENING_ID")
+	private RekeningEntity rekening;
 	
 	
 	public EvenementEntity(){
 		//TODO catch not NULL restrictions
 	}
 
-	public EvenementEntity(String naam, Date startDatum, Date eindDatum){
-		//setRekening(rekening);
+	public EvenementEntity(RekeningEntity rekening, String naam, Date startDatum, Date eindDatum){
+		setRekening(rekening);
 		setNaam(naam);
 		setStartDatum(startDatum);
 		setEindDatum(eindDatum);
 		setState(Status.NB);
 	}
-	/*
-	
+
 	public RekeningEntity getRekening() {
 		return rekening;
 	}
@@ -54,7 +56,7 @@ public class EvenementEntity extends Identifier{
 	public void setRekening(RekeningEntity rekening) {
 		this.rekening = rekening;
 	}
-*/
+	
 	public void setStatus(Status status) {
 		this.status = status;
 	}

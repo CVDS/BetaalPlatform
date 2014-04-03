@@ -20,9 +20,9 @@ public class RekeningEntity extends Identifier{
 	@Column(name="BIC")
 	private String bic;
 	
-//	@ManyToOne
-//	@JoinColumn(name="PERSOON_ID")
-//	private PersoonEntity persoon;
+	@ManyToOne
+	@JoinColumn(name="PERSOON_ID")
+	private PersoonEntity persoon;
 	
 	@Column(name="BANK")
 	private String bank;
@@ -51,14 +51,13 @@ public class RekeningEntity extends Identifier{
 		this.bic = bic;
 	}
 
-	/*public PersoonEntity getPersoon() {
+	public PersoonEntity getPersoon() {
 		return persoon;
 	}
 
 	public void setPersoon(PersoonEntity persoon) {
 		this.persoon = persoon;
 	}
-	*/
 
 	public String getBank() {
 		return bank;
