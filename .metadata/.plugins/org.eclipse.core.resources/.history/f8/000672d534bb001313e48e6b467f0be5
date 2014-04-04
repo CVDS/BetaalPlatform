@@ -1,0 +1,16 @@
+package be.faros.betaalplatform.util;
+
+import java.util.Arrays;
+
+import org.dozer.DozerBeanMapper;
+
+
+public class DozerConfig {
+	private DozerBeanMapper mapper;
+
+	public DozerConfig(){}
+	public DozerBeanMapper getmapper(){
+		return mapper;
+	}
+
+}

@@ -1,17 +1,15 @@
 package be.faros.betaalplatform.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.dozer.Mapping;
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDateTime;
 
 import be.faros.betaalplatform.model.Status;
 
@@ -27,10 +25,12 @@ public class EvenementEntity extends Identifier{
 	private Status status;
 	
 	@Column(name="STARTDATUM")
-	private Date startDatum;
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
+	private LocalDateTime startDatum;
 
 	@Column(name="EINDDATUM")
-	private Date eindDatum;
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
+	private LocalDateTime eindDatum;
 	
 	@ManyToOne
 	@JoinColumn(name="REKENING_ID")
@@ -41,7 +41,7 @@ public class EvenementEntity extends Identifier{
 		//TODO catch not NULL restrictions
 	}
 
-	public EvenementEntity(RekeningEntity rekening, String naam, Date startDatum, Date eindDatum){
+	public EvenementEntity(RekeningEntity rekening, String naam, LocalDateTime startDatum, LocalDateTime eindDatum){
 		setRekening(rekening);
 		setNaam(naam);
 		setStartDatum(startDatum);
@@ -77,19 +77,19 @@ public class EvenementEntity extends Identifier{
 		this.status = status;
 	}
 
-	public Date getStartDatum() {
+	public LocalDateTime getStartDatum() {
 		return startDatum;
 	}
 
-	public void setStartDatum(Date startDatum) {
+	public void setStartDatum(LocalDateTime startDatum) {
 		this.startDatum = startDatum;
 	}
 
-	public Date getEindDatum() {
+	public LocalDateTime getEindDatum() {
 		return eindDatum;
 	}
 
-	public void setEindDatum(Date eindDatum) {
+	public void setEindDatum(LocalDateTime eindDatum) {
 		this.eindDatum = eindDatum;
 	}
 	

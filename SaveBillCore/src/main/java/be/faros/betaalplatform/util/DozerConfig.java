@@ -1,30 +1,23 @@
 package be.faros.betaalplatform.util;
 
-import org.dozer.classmap.RelationshipType;
-import org.dozer.loader.api.BeanMappingBuilder;
-import org.springframework.config.java.annotation.Bean;
+import java.util.Arrays;
+
+import org.dozer.DozerBeanMapper;
 
 public class DozerConfig {
-	/*
-	public void map() {
-		
-		BeanMappingBuilder builder = new BeanMappingBuilder() {
-			protected void configure() {
-				mapping(Bean.class, Bean.class, oneWay(), mapId("A"),
-						mapNull(true))
-						.exclude("excluded")
-						.fields("src",
-								"dest",
-								copyByReference(),
-								collectionStrategy(true,
-										RelationshipType.NON_CUMULATIVE),
-								hintA(String.class), hintB(Integer.class),
-								fieldOneWay(), useMapId("A"),
-								customConverterId("id"))
-						.fields("src", "dest",
-								customConverter("org.dozer.CustomConverter"));
-			}
-		};
+	private DozerBeanMapper mapper;
+
+	public DozerConfig() {
+		mapper = new DozerBeanMapper(
+				Arrays.asList(new String[] { "dozerBeanMapping.xml" }));
 	}
-	*/
+
+	public DozerConfig(String xmlFile) {
+		mapper = new DozerBeanMapper(Arrays.asList(new String[] { xmlFile }));
+	}
+
+	public DozerBeanMapper getmapper() {
+		return mapper;
+	}
+
 }

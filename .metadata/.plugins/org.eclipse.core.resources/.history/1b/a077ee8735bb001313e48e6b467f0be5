@@ -1,0 +1,8 @@
+package be.faros.betaalplatform.repository;
+
+public class RepositoryFactory {
+
+	public RepositoryFactory(){
+		
+	} 
+}

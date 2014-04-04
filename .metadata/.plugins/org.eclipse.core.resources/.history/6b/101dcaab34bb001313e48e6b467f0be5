@@ -1,0 +1,9 @@
+package be.faros.betaalplatform.util;
+
+import org.dozer.classmap.RelationshipType;
+import org.dozer.loader.api.BeanMappingBuilder;
+import org.springframework.config.java.annotation.Bean;
+
+public class DozerConfig {
+	
+}

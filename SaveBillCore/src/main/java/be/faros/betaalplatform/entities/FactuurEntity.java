@@ -1,7 +1,5 @@
 package be.faros.betaalplatform.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +7,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDate;
 
 import be.faros.betaalplatform.model.Status;
 
@@ -32,14 +33,15 @@ public class FactuurEntity extends Identifier{
 	private PersoonEntity deelnemer;
 
 	@Column(name="DATUM")
-	private Date datum;
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+	private LocalDate datum;
 
 	public FactuurEntity() {
 		//TODO catch not NULL restrictions
 	}
 	
 	public FactuurEntity(EvenementEntity evenement, Status status,
-			double bedrag, PersoonEntity deelnemer, Date datum) {
+			double bedrag, PersoonEntity deelnemer, LocalDate datum) {
 		setEvenement(evenement);
 		setStatus(status);
 		setBedrag(bedrag);
@@ -79,11 +81,11 @@ public class FactuurEntity extends Identifier{
 		this.deelnemer = deelnemer;
 	}
 
-	public Date getDatum() {
+	public LocalDate getDatum() {
 		return datum;
 	}
 
-	public void setDatum(Date datum) {
+	public void setDatum(LocalDate datum) {
 		this.datum = datum;
 	}
 	

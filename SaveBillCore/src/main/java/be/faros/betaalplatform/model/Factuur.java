@@ -1,6 +1,6 @@
 package be.faros.betaalplatform.model;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 
 public class Factuur {
@@ -9,13 +9,13 @@ public class Factuur {
 	private Status status;
 	private double bedrag;
 	private Persoon deelnemer;
-	private Date datum;
+	private LocalDate datum;
 	
 	public Factuur(){
 		
 	}
 	
-	public Factuur(Long id, Evenement evenement, Status status, double bedrag, Persoon deelnemer, Date datum) {
+	public Factuur(Long id, Evenement evenement, Status status, double bedrag, Persoon deelnemer, LocalDate datum) {
 		setId(id);
 		setEvenement(evenement);
 		setStatus(status);
@@ -56,10 +56,10 @@ public class Factuur {
 	public void setDeelnemer(Persoon deelnemer) {
 		this.deelnemer = deelnemer;
 	}
-	public Date getDatum() {
+	public LocalDate getDatum() {
 		return datum;
 	}
-	public void setDatum(Date datum) {
+	public void setDatum(LocalDate datum) {
 		this.datum = datum;
 	}
 	

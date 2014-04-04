@@ -1,0 +1,15 @@
+package be.faros.betaalplatform.repository;
+
+public class RepositoryFactory {
+
+	public RepositoryFactory(){
+		
+	} 
+	
+	public Repository createRepostitory(String type){
+		Repository r;
+		switch (type){
+		case "evenement":
+		}
+	}
+}

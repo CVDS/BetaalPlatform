@@ -46,13 +46,13 @@ public class Test {
 		System.out.println("--------PERSONEN---------");
 		for (Persoon ps : service.findAllePersonen()) {
 			System.out.println(ps.getId() + ": " + ps.getVoornaam() + " "
-					+ ps.getNaam());
+					+ ps.getNaam() + " - " + ps.getEmail());
 		}
 
 		System.out.println("\n--------EVENEMENTEN---------");
 		for (Evenement es : service.findAlleEvenementen()) {
 			System.out.println(es.getId() + ": " + es.getNaam() + " "
-					+ es.getState());
+					+ es.getState() +" - "+ es.getStartDatum());
 		}
 
 		System.out.println("\n--------REKENINGEN---------");

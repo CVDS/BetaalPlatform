@@ -1,32 +1,32 @@
 package be.faros.betaalplatform.model;
 
-import java.util.Date;
-
 import org.dozer.Mapping;
+import org.joda.time.LocalDateTime;
 
 public class Evenement {
 	private Long id;
 	private Rekening rekening;
 	private String naam;
 	private Status status;
-	private Date startDatum;
-	private Date eindDatum;
+	private LocalDateTime startDatum;
+	private LocalDateTime eindDatum;
 
 	public Evenement() {
 
 	}
 
-	public Evenement(Long id, Rekening rekening, String naam, Date startDatum,
-			Date eindDatum) {
+	public Evenement(Long id, Rekening rekening, String naam, LocalDateTime startDatum,
+			LocalDateTime eindDatum) {
 		setId(id);
 		setRekening(rekening);
 		setNaam(naam);
+		setState(Status.NB);
 		setStartDatum(startDatum);
 		setEindDatum(eindDatum);
 	}
 
 	public Evenement(Long id, Rekening rekening, String naam, Status status,
-			Date startDatum, Date eindDatum) {
+			LocalDateTime startDatum, LocalDateTime eindDatum) {
 		setId(id);
 		setRekening(rekening);
 		setNaam(naam);
@@ -75,19 +75,19 @@ public class Evenement {
 		this.status = state;
 	}
 
-	public Date getStartDatum() {
+	public LocalDateTime getStartDatum() {
 		return startDatum;
 	}
 
-	public void setStartDatum(Date startDatum) {
+	public void setStartDatum(LocalDateTime startDatum) {
 		this.startDatum = startDatum;
 	}
 
-	public Date getEindDatum() {
+	public LocalDateTime getEindDatum() {
 		return eindDatum;
 	}
 
-	public void setEindDatum(Date eindDatum) {
+	public void setEindDatum(LocalDateTime eindDatum) {
 		this.eindDatum = eindDatum;
 	}
 

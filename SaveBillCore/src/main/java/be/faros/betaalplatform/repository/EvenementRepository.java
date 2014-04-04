@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import be.faros.betaalplatform.entities.EvenementEntity;
 
-public interface EvenementRepository {
+public interface EvenementRepository{
 	public void save(EvenementEntity evenement);
 	public void delete(EvenementEntity evenement);
 	public EvenementEntity findById(Long id);

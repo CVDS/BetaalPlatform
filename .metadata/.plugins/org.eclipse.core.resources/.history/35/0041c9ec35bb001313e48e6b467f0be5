@@ -1,0 +1,21 @@
+package be.faros.betaalplatform.repository;
+
+import be.faros.betaalplatform.repository.hibernate.HibernateEvenementRepository;
+
+public class RepositoryFactory {
+
+	public RepositoryFactory(){
+		
+	} 
+	
+	public Repository createRepostitory(String type){
+		Repository repository = null;
+		switch (type){
+		case "evenement":
+			repository = new HibernateEvenementRepository();
+
+		default: //throw new exception;
+		}
+		return repository;
+	}
+}
